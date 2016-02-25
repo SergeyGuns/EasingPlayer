@@ -6,15 +6,16 @@ var EasingPlayer = class {
     this.from     = from;
     this.to       = to;
     this.duration = duration;
-    this.start   =  new Date().getTime();
     this.preffix = '';
     this.suffix  = '';
     this.timingFunction = timingFunction
   }
 
-  run() { var timer = setInterval( function() {
+  run() {
+    var start   =  new Date().getTime();
+    var timer = setInterval( function() {
 
-      var time = new Date().getTime() - this.start;
+      var time = new Date().getTime() - start;
       var x = this.timingFunction(time, this.from, this.to - this.from, this.duration);
       console.log(Math.round(x));
       this.elem[this.elemProp] = this.preffix + Math.round(x) + this.suffix;
