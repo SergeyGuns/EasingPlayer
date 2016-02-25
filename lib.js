@@ -6,8 +6,8 @@ var EasingPlayer = class {
     this.from     = from;
     this.to       = to;
     this.duration = duration;
-    this.preffix = '';
-    this.suffix  = '';
+    this.preffix  = '';
+    this.suffix   = '';
     this.timingFunction = timingFunction
   }
 
